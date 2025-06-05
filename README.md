@@ -2,7 +2,7 @@
 # Informe Final: Integración de Chatbot con Pepper
 **Curso de Sistemas Operativos**  
 _**Ana Vargas y Cristian Olarte**_  
-_Fecha: [fecha actual]_
+_Fecha: 04/06/25_
 
 ---
 
