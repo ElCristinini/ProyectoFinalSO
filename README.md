@@ -123,44 +123,34 @@ Terminando...")
 
 ---
 
-## 3. Perfil Profesional en GitHub
+## 3. Solución para la Conexión con Pepper y el Servidor
 
-Aquí se muestra el proceso del perfil profesional en Github, ya que queda mejor visualmente al momento de que personas ajenas a nosotros entren a nuestro perfil:
+Para asegurar que la conexión entre Pepper y el servidor funcione correctamente, sigue estos pasos:
 
-### Primer Punto:
+1. **Verificar las IPs:**
+   Asegúrate de que tanto Pepper como el servidor estén en la misma red o que las IPs configuradas en el código sean correctas.
+   - Para Pepper: Verifica la IP de tu dispositivo Pepper con `ifconfig` o revisando el manual del dispositivo.
+   - Para el servidor: Verifica que la IP de tu máquina local (donde corre el servidor Flask) esté bien configurada.
 
-Crearemos un `README` especial con nuestro nombre de GitHub. Esto hace que podamos editar la presentación de nuestro perfil, quedando de la siguiente manera:
+2. **Configurar el servidor Flask:**
+   Asegúrate de que el servidor Flask esté corriendo en la IP correcta y en el puerto especificado (en este caso, `5000`).
+   - Ejecuta `python server.py` en la máquina donde corre el servidor Flask.
+   - Revisa que no haya problemas de firewall que puedan bloquear las conexiones al puerto `5000`.
 
-![Imagen](Foto 1.jpg)  
-_Imagen de como quedaría de creado el repositorio con nuestro nombre_
+3. **Conexión a Pepper:**
+   En el código del cliente (`Pepper`), asegúrate de que la dirección IP de Pepper (`ROBOT_IP`) sea correcta y accesible desde tu máquina.
+   - Si tienes problemas con la conexión, intenta usar `ping` para verificar si la máquina puede comunicarse con Pepper.
 
-### Segundo Punto:
+4. **Prueba de Conexión:**
+   Si todo está bien configurado, ejecuta ambos códigos:
+   - El servidor Flask en la máquina local.
+   - El código en Pepper.
+   - Intenta enviar preguntas desde la terminal de Pepper y verifica que el servidor esté respondiendo correctamente.
 
-Entraremos al `README` especial con nuestro nombre de GitHub, y ahora entraremos al link que hay en la tarea de Moodle, esto para seleccionar de entre los miles de diseños que hay en ese repositorio en específico:
-
-![Imagen](Imagen 2.jpg)  
-_Seleccionaremos alguno de todos los repositorios. Tener en cuenta que en la imagen se ven solo algunos de todos los que hay._
-
-### Tercer Punto:
-
-Copiaremos algún estilo que nos guste y lo pegaremos en el `README`, para esto editaremos el mismo desde un simbolito de un lápiz a la parte derecha de la pantalla. Ya cuando tengamos eso, editaremos y cambiaremos con base en nuestros gustos:
-
-![Imagen](Foto 3.jpg)  
-_Tener en cuenta los lenguajes de donde se copió el diseño de GitHub, comúnmente son: HTML, Markdown, etc._
-
----
-
-## 4. Cuarto Punto:
-
-Ya para terminar, decidiremos si podremos nuestras redes sociales, lo que nos gusta hacer, hobbies, expectativas con las materias, etc., en el mismo, quedando de la siguiente manera:
-
-![Imagen](Foto 4.jpg)  
-_Perfil en GitHub 1_
-
-![Imagen](Foto 5.jpg)  
-_Perfil en GitHub 2_
-
-![Imagen](Foto 6.jpg)  
-_Perfil en GitHub 3_
+5. **Depuración:**
+   Si experimentas errores, revisa los logs de ambas máquinas:
+   - En la terminal de la máquina local para el servidor Flask.
+   - En la terminal de Pepper si el cliente no puede conectarse.
+   - Asegúrate de que no haya bloqueos de puertos o IPs.
 
 ---
